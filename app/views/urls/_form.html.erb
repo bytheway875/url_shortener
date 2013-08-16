@@ -1,0 +1,27 @@
+<%= simple_form_for @url do |f| %>
+  <% if @url.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@url.errors.count, "error") %> prohibited this url from being saved:</h2>
+
+      <ul>
+      <% @url.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.input :original_url, :label => 'Enter the URL you want to shorten' %>
+  </div>
+  <div class="field">
+    <%= f.input :shortened_url, :label => "Choose a custom URL extension (or we'll provide you a random one" %>
+  </div>
+  <!-- <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div> -->
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
