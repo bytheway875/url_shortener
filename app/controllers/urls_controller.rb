@@ -2,7 +2,7 @@ class UrlsController < ApplicationController
   before_action :set_url, only: [:show, :edit, :update, :destroy]
 
   def redirect
-    @url = Url.find_by_shortened_url(params[:shortened_extension])
+    @url = Url.find_by_shortened_extension(params[:shortened_extension])
     redirect_to @url.original_url, :status => @url.status
   end
 
