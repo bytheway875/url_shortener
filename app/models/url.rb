@@ -16,10 +16,10 @@ class Url < ActiveRecord::Base
     end
 
     def generate_shortened_url_extension
-      if self.shortened_url.blank?
+      if self.shortened_extension.blank?
         begin
-            self.shortened_url = SecureRandom.hex(2)
-        end while not Url.find_by(:shortened_extension => self.shortened_url).blank?
+            self.shortened_extension = SecureRandom.hex(2)
+        end while not Url.find_by(:shortened_extension => self.shortened_extension).blank?
       end
     end
 end
