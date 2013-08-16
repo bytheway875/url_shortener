@@ -1,9 +1,9 @@
 class Url < ActiveRecord::Base
 	validates_presence_of :original_url, :status
 	# validates :original_url, :uniqueness => true
-	validates :shortened_url, :uniqueness => true
+	validates :shortened_extension, :uniqueness => true
 	before_save :add_http
-  before_save :generate_shortened_url
+  before_save :generate_shortened_url_extension
   require 'securerandom'
 
   # private
@@ -15,11 +15,11 @@ class Url < ActiveRecord::Base
       end
     end
 
-    def generate_shortened_url
+    def generate_shortened_url_extension
       if self.shortened_url.blank?
         begin
             self.shortened_url = SecureRandom.hex(2)
-        end while not Url.find_by(:shortened_url => self.shortened_url).blank?
+        end while not Url.find_by(:shortened_extension => self.shortened_url).blank?
       end
     end
 end

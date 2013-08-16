@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130816024200) do
+ActiveRecord::Schema.define(version: 20130816055506) do
 
   create_table "urls", force: true do |t|
     t.string   "original_url"
-    t.string   "shortened_url"
-    t.integer  "status",        default: 301
+    t.string   "shortened_extension"
+    t.integer  "status",              default: 301
     t.datetime "created_at"
     t.datetime "updated_at"
   end

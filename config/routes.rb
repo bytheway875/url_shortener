@@ -1,6 +1,6 @@
 UrlShortener::Application.routes.draw do
   resources :urls
-  get ':shortened_url' => 'urls#redirect'
+  get ':shortened_extension' => 'urls#redirect'
   root :to => 'urls#new'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,15 @@
+= simple_form_for @url do |f|
+  - if @url.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@url.errors.count, "error")
+        prohibited this url from being saved:
+      %ul
+        - @url.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.input :original_url, :label => 'Enter the URL you want to shorten'
+  .field
+    = f.input :shortened_extension, :label => "Choose a custom URL extension (optional)"
+  .actions
+    = f.submit "Submit", class: 'button'

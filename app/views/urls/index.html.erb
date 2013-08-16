@@ -16,7 +16,7 @@
     <% @urls.each do |url| %>
       <tr>
         <td><%= url.original_url %></td>
-        <td><%= url.shortened_url %></td>
+        <td><%= url.shortened_extension %></td>
         <td><%= url.status %></td>
         <td><%= link_to 'Show', url %></td>
         <td><%= link_to 'Edit', edit_url_path(url) %></td>

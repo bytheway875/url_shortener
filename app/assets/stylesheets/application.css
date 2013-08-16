@@ -9,5 +9,19 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+ *= require foundation_and_overrides
  *= require_tree .
  */
+
+.main_div{
+	margin-top:12em;
+}
+
+.large-12.columns.panel.main_div{
+	text-align: center;
+}
+
+.input{
+	width:50%;
+	margin:0 auto;
+}

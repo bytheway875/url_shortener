@@ -2,7 +2,7 @@ class UrlsController < ApplicationController
   before_action :set_url, only: [:show, :edit, :update, :destroy]
 
   def redirect
-    @url = Url.find_by_shortened_url(params[:shortened_url])
+    @url = Url.find_by_shortened_url(params[:shortened_extension])
     redirect_to @url.original_url, :status => @url.status
   end
 
@@ -79,6 +79,6 @@ class UrlsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def url_params
-      params.require(:url).permit(:original_url, :shortened_url, :status)
+      params.require(:url).permit(:original_url, :shortened_extension, :status)
     end
 end
