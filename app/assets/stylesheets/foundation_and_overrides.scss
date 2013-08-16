@@ -283,13 +283,13 @@ $primary-color: #2ecc71;
 // We use these to style the labels in different ways
 
 // $form-label-pointer: pointer;
-// $form-label-font-size: emCalc(14);
+// $form-label-font-size: emCalc(25);
 // $form-label-font-weight: 500;
 // $form-label-font-color: lighten(#000, 30%);
 // $form-label-bottom-margin: emCalc(3);
 // $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
-// $input-font-size: emCalc(14);
+$input-font-color: green;
+// $input-font-size: emCalc(20);
 // $input-bg-color: #fff;
 // $input-focus-bg-color: darken(#fff, 2%);
 // $input-border-color: darken(#fff, 20%);
@@ -786,7 +786,7 @@ $primary-color: #2ecc71;
 
 // We use these to style the label text
 
-// $label-font-sizing: emCalc(14);
+$label-font-sizing: emCalc(20);
 // $label-font-weight: bold;
 // $label-font-color: #333;
 // $label-font-color-alt: #fff;
@@ -1301,3 +1301,14 @@ $panel-border-size: 5px;
 // $topbar-sticky-class: ".sticky";
 
 @import 'foundation';
+
+label{
+  color:white;
+  font-size:1em;
+}
+
+input#url_shortened_extension{
+  width:10%;
+  margin:0 auto;
+
+}

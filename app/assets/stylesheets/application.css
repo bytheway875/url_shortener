@@ -21,7 +21,22 @@
 	text-align: center;
 }
 
-.input{
-	width:50%;
+#q{
+	width:45%;
 	margin:0 auto;
+	font-size:1em;
+	text-align:center;
 }
+
+#line{
+	color:black;
+	margin-top:0;
+}
+
+.original{
+	margin-bottom:0;
+}
+/*label{
+	color:white;
+	font-size:1em;
+}*/

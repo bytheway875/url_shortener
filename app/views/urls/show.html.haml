@@ -1,12 +1,11 @@
 .row
   .large-12.columns.panel.main_div
     %p#notice= notice
-    %p
+    %p.original
       Original url:
-      %br
-      = @url.original_url
+      #line= @url.original_url
     %p
-      %strong "Shortened" url:
-      %br
-      %strong= "http://qry.herokuapp.com/"+@url.shortened_extension
-    = link_to 'Make Another URL', new_url_path
+      = form_tag("/redirect, method:get") do
+        = label_tag(:q, "Shortened Url:")
+        = text_field_tag(:q, "http://www.qry.herokuapp.com/#{@url.shortened_extension}")
+      = link_to 'Make Another URL', new_url_path
