@@ -30,14 +30,16 @@ class UrlsController < ApplicationController
   # /urls
   # Looks for a url match to several formats of a valid url. Otherwise, will initialize a new url.
   def create
-    existing_url = params[:url][:original_url]
+    submitted_url = url_params[:original_url]
 
-    @url = Url.where(original_url: [existing_url, "http://#{existing_url}", "http://www.#{existing_url}"]).first_or_initialize
+    @url = Url.where(original_url: [submitted_url, "http://#{submitted_url}","http://www.#{submitted_url}"]).first_or_initialize
+    byebug
     @url.assign_attributes(url_params)
 
     respond_to do |format|
       if @url.persisted?
         format.html {redirect_to @url, notice: "We've already redirected this url. Check out the shortened url below."}
+        format.json { render action: 'show', status: 200, location: @url }
       elsif @url.save
         format.html { redirect_to @url, notice: 'Url was successfully created.' }
         format.json { render action: 'show', status: :created, location: @url }
