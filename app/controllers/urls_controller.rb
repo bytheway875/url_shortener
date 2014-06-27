@@ -6,28 +6,29 @@ class UrlsController < ApplicationController
     redirect_to @url.original_url, :status => @url.status
   end
 
-  # GET /urls
-  # GET /urls.json
+  def show
+  end
+
+  # GET index
+  # /urls
   def index
     @urls = Url.all
   end
 
-  # GET /urls/1
-  # GET /urls/1.json
-  def show
-  end
-
-  # GET /urls/new
+  # GET new
+  # /urls/new
   def new
     @url = Url.new
   end
 
-  # GET /urls/1/edit
+  # GET edit
+  # /urls/:id/edit
   def edit
   end
 
-  # POST /urls
-  # POST /urls.json
+  # POST create
+  # /urls
+  # Looks for a url match to several formats of a valid url. Otherwise, will initialize a new url.
   def create
     existing_url = params[:url][:original_url]
 
@@ -47,8 +48,8 @@ class UrlsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /urls/1
-  # PATCH/PUT /urls/1.json
+  # PATCH update
+  # urls/:id
   def update
     respond_to do |format|
       if @url.update(url_params)
@@ -72,12 +73,10 @@ class UrlsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_url
       @url = Url.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def url_params
       params.require(:url).permit(:original_url, :shortened_extension, :status)
     end
