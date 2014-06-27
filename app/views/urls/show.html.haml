@@ -7,5 +7,5 @@
     %p
       = form_tag("/redirect, method:get") do
         = label_tag(:q, "Shortened Url:")
-        = text_field_tag(:q, "qry.herokuapp.com/#{@url.shortened_extension}")
+        = text_field_tag(:q, "#{root_url}#{@url.shortened_extension}")
       = link_to 'Make Another URL', new_url_path

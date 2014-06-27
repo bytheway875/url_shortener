@@ -33,7 +33,6 @@ class UrlsController < ApplicationController
     submitted_url = url_params[:original_url]
 
     @url = Url.where(original_url: [submitted_url, "http://#{submitted_url}","http://www.#{submitted_url}"]).first_or_initialize
-    byebug
     @url.assign_attributes(url_params)
 
     respond_to do |format|

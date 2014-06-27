@@ -1,28 +1,10 @@
-== README
+== URL SHORTENER
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple Rails App that shortens urls. If a url has already been shortened, it will return the already-shortened object. If a custom url extension is not specified, it will create one. It's super simple -- just one controller and one model.
 
-Things you may want to cover:
+Deployed on Heroku to qry.herokuapp.com -- It's a free deployment, so you may need to wait a couple seconds for the app to load for the first time.
 
-* Ruby version
+Rails 4.0 with RSpec 3.0.2. Frontend Framework is Foundation.
 
-* System dependencies
+It's also very green, because why not?
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
